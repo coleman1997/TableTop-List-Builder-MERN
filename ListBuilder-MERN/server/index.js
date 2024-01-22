@@ -10,14 +10,17 @@ const app = express();
 
 app.use(express.json());
 
-//cors
-app.use(
-  cors({
-    origin: "http://localhost:3000",
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type"],
-  })
-);
+//defualt cors
+app.use(cors());
+
+// cors;
+// app.use(
+//   cors({
+//     origin: "http://localhost:5173",
+//     methods: ["GET", "POST", "PUT", "DELETE"],
+//     allowedHeaders: ["Content-Type"],
+//   })
+// );
 
 app.use("/units", unitRoute);
 app.use("/total", unitTotalRoute);
