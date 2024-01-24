@@ -101,11 +101,11 @@ const AddUnit = () => {
         </div>
         <div className='my-4'>
           <label className='text-xl mr-4 text-gray-500'>Abilities</label>
-          <input 
+          <textarea 
             type='text'
             value={unitAbility}
             onChange={(e) => setAbility(e.target.value)}
-            className='border-2 border-gray-500 px-4 py-2 w-full'
+            className='border-2 border-gray-500 h-36 px-4 my-4 w-full'
           />
         </div>
         <button className='p-2 bg-sky-300 m-8' onClick={handleSaveUnit}>Save</button>
