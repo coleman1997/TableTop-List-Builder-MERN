@@ -37,7 +37,7 @@ console.log(units)
       {loading ? (
         <Spinner />
       ) : (
-        <table className='w-full border-seperate border-spacing-2'>
+        <table className='w-full border-separate border-spacing-2'>
           <thead>
             <tr>
             <th className='border border-slate-600 rounded-md'>Name</th>
@@ -48,9 +48,9 @@ console.log(units)
           <tbody>
             {units?.map((unit) => (
               <tr key={unit._id} className='h-8'>
-                <td className='border border-slate-700 rounded-md'>{unit.name}</td>
-                <td className='border border-slate-700 rounded-md'>{unit.cost}</td>
-                <td className='border border-slate-700 rounded-md'>
+                <td className='border border-slate-700 rounded-md text-center'>{unit.name}</td>
+                <td className='border border-slate-700 rounded-md text-center'>{unit.cost}</td>
+                <td className='border border-slate-700 rounded-md text-center'>
                   <div className='flex justify-center gap-x-4'>
                     <Link to={`/units/details/${unit._id}`}>
                       <BsInfoCircle className='text-2xl text-yellow-600' />
