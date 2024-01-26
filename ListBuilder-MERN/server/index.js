@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import { Unit } from "./models/unitModel.js";
 import unitRoute from "./routes/unitRoute.js";
 import unitTotalRoute from "./routes/unitTotalRoute.js";
+import listRoute from './routes/listRoute.js';
 import cors from "cors";
 
 const app = express();
@@ -24,6 +25,8 @@ app.use(cors());
 
 app.use("/units", unitRoute);
 app.use("/total", unitTotalRoute);
+app.use("/list", listRoute);
+
 
 mongoose
   .connect(mongoDBURL)
