@@ -5,6 +5,7 @@ import AddUnit from "./pages/AddUnit";
 import DeleteUnit from "./pages/DeleteUnit";
 import EditUnit from "./pages/EditUnit";
 import UnitDetails from "./pages/UnitDetails";
+import ListDisplay from "./pages/ListDisplay";
 
 
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
       <Route path='/units/delete/:id' element={<DeleteUnit />}/>
       <Route path='/units/edit/:id' element={<EditUnit />}/>
       <Route path='/units/details/:id' element={<UnitDetails />}/>
+      <Route path='/list' element={<ListDisplay />}/>
     </Routes>
   )
 }
