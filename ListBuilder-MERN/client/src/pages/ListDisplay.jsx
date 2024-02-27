@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import Spinner from '../components/Spinner';
+import BackButton from '../components/BackButton'
 
 const ListDisplay = () => {
 const [loading, setLoading] = useState(false);
@@ -22,6 +23,8 @@ useEffect(() => {
 
     return (
     <div className='p-4'>
+      <BackButton />
+      <h1 className='text-3xl my-8'>My List</h1>
         {loading ? (
             <Spinner />
         ) : (
