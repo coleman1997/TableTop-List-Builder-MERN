@@ -81,7 +81,7 @@ console.log(units)
                     <Link to={`/units/delete/${unit._id}`}>
                       <MdOutlineDelete className='text-2xl text-red-600' />
                     </Link>
-                    <MdOutlineAddBox className='text-sky-800 text-2xl' onClick={() => handleAddtoList(unit._id)}/>
+                    <MdOutlineAddBox className='text-sky-800 text-2xl cursor-pointer' onClick={() => handleAddtoList(unit._id)}/>
                   </div>
                 </td>
               </tr>
