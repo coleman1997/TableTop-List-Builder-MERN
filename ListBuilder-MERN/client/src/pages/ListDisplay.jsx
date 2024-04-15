@@ -4,6 +4,7 @@ import Spinner from '../components/Spinner';
 import BackButton from '../components/BackButton'
 import { Link } from 'react-router-dom'
 import { MdOutlineDelete } from 'react-icons/md';
+import { BsInfoCircle } from 'react-icons/bs'
 
 const ListDisplay = () => {
 const [loading, setLoading] = useState(false);
@@ -47,6 +48,9 @@ useEffect(() => {
                           <div className='flex justify-center gap-x-4'>
                             <Link to={`/list/delete/${listUnit._id}`}>
                              <MdOutlineDelete className='text-2xl text-red-600' />
+                            </Link>
+                            <Link to={`/list/details/${listUnit._id}`}>
+                              <BsInfoCircle className='text-2xl text-yellow-600' />
                             </Link>
                           </div>
                         </td>
