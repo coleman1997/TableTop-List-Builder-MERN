@@ -2,6 +2,9 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import Spinner from '../components/Spinner';
 import BackButton from '../components/BackButton'
+import { Link } from 'react-router-dom'
+import { MdOutlineDelete } from 'react-icons/md';
+import { BsInfoCircle } from 'react-icons/bs'
 
 const ListDisplay = () => {
 const [loading, setLoading] = useState(false);
@@ -33,6 +36,7 @@ useEffect(() => {
                     <tr>
                       <th className='border border-slate-600 rounded-md'>name</th>  
                       <th className='border border-slate-600 rounded-md'>cost</th>
+                      <th className='border border-slate-600 rounded-md'>Operations</th>
                     </tr>   
                 </thead>
                 <tbody>
@@ -40,6 +44,16 @@ useEffect(() => {
                     <tr key={listUnit._id} className='h-8'>
                         <td className='border border-slate-700 rounded-md text-center'>{listUnit.unitProfile.name}</td>
                         <td className='border border-slate-700 rounded-md text-center'>{listUnit.unitProfile.cost}</td>
+                        <td className='border border-slate-700 rounded-md text-center'>
+                          <div className='flex justify-center gap-x-4'>
+                            <Link to={`/list/delete/${listUnit._id}`}>
+                             <MdOutlineDelete className='text-2xl text-red-600' />
+                            </Link>
+                            <Link to={`/list/details/${listUnit._id}`}>
+                              <BsInfoCircle className='text-2xl text-yellow-600' />
+                            </Link>
+                          </div>
+                        </td>
                     </tr>
                    ))} 
                 </tbody>

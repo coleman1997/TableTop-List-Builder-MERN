@@ -40,14 +40,30 @@ router.get("/:id", async (request, response) => {
 
 //get all units
 router.get("/", async (request, response) => {
-    try {
-      const list = await List.find({})
-        .populate('unitProfile');
-      return response.status(200).json(list);
-    } catch (error) {
-      console.log(error.message);
-      response.status(500).send({ message: error.message });
+  try {
+    const list = await List.find({}).populate("unitProfile");
+    return response.status(200).json(list);
+  } catch (error) {
+    console.log(error.message);
+    response.status(500).send({ message: error.message });
+  }
+});
+
+//delete unit
+router.delete("/:id", async (request, response) => {
+  try {
+    const { id } = request.params;
+    const result = await List.findByIdAndDelete(id, request.body);
+
+    if (!result) {
+      return response.status(400).json({ message: "Unit not found" });
     }
-  });
+
+    return response.status(200).send({ message: "Unit deleted succesfully" });
+  } catch (error) {
+    console.log(error.message);
+    response.status(500).send({ message: error.message });
+  }
+});
 
 export default router;
