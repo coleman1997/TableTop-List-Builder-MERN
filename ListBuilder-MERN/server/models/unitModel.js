@@ -36,4 +36,4 @@ const unitSchema = mongoose.Schema(
   }
 );
 
-export const Unit = mongoose.model("Unit", unitSchema);
+export const Unit = mongoose.model("units", unitSchema);
